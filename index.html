@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontawesome-web/css/all.css">
+  
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /*navbar*/
+    .navbar{
+      padding: 20px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .menu{
+      font-family: 'Raleway', sans-serif;
+      list-style: none;
+    }
+    .navbar .menu li{
+      display: inline-block;
+      padding: 5px 20px;
+    }
+    .navbar .menu li a{
+      color: #000;
+      text-decoration: none;
+    }
+
+    /*content-1*/
+    .content-1{
+      padding: 60px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .content-1 .left{
+      width: 500px;
+    }
+    .content-1 .left .title{
+      margin: 20px 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+    }
+    .content-1 .left .desc{
+      width: 530px;
+    }
+    .content-1 .left form input{
+      padding: 10px;
+      width: 260px;
+      font-family: 'Open Sans', sans-serif;
+      margin-right: 10px;
+    }
+    .content-1 .left form button{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: #fff;
+      background-color: hsl(224, 93%, 58%);
+      padding: 14px 55px;
+      border: none;
+    }
+    .content-1 .left form button:hover{
+      background-color: hsl(224, 93%, 70%);
+    }
+    .content-1 .left form .alert{
+      color: orangered;
+      font-size: 14px;
+      margin: 0;
+      display: none;
+    }
+    .content-1 .illustration-1{
+      width: 500px;
+    }
+
+    /*content-2*/
+    .content-2 img.bg-curve-desktop{
+      width: auto;
+      height: 114px;
+    }
+    .content-2 .bg-curve-mobile{
+      display: none;
+    }
+    .content-2{
+      display: flex;
+      flex-direction: column;
+    }
+    .content-2 .main{
+      background-color: #F8F8FE;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px 0; 
+    }
+    .content-2 .main .left{
+      width: 500px;
+    }
+    .content-2 .main .left .title{
+      margin: 20px 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+    }
+    .content-2 .main .left .desc-1, .desc-2{
+      width: 529px;
+    }
+    .content-2 .main .left a{
+      width: 165px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: hsl(170, 45%, 43%);
+      text-decoration: none;
+      border-bottom: 1px solid hsl(170, 45%, 43%);
+    }
+    .content-2 .main .left a:hover{
+      color: hsl(170, 45%, 53%);
+    }
+    .content-2 .main .left .quotes{
+      font-size: 14px;
+      line-height: 25px;
+      background-color: #fff;
+      padding: 30px 50px;
+      margin: 50px 0;
+      width: 300px;
+    }
+    .content-2 .main .left .quotes .id{
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .content-2 .main .left .quotes img.avatar{
+      width: 40px;
+      border-radius: 40px;
+    }
+    .content-2 .main .left .quotes .user .name{
+      margin: 0;
+      font-size: 14px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+    }
+    .content-2 .main .left .quotes .user .title{
+      margin: 0;
+      font-size: 14px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+    }
+    .content-2 .main .illustration-2{
+      width: 500px;
+    }
+
+    /*content-3*/
+    .content-3{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: hsl(238, 22%, 44%);
+      color: #fff;
+      padding: 60px 0;
+    }
+    .content-3 .left{
+      width: 500px;
+    }
+    .content-3 .left .title{
+      margin: 20px 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+    }
+    .content-3 .left .desc{
+      width: 450px;
+    }
+    .content-3 form{
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-3 form input{
+      font-family: 'Open Sans', sans-serif;
+      padding: 10px;
+      margin: 0 0 10px 0;
+    }
+    .content-3 form .alert{
+      font-size: 14px;
+      margin: 0 0 10px 0;
+      display: none;
+    }
+    .content-3 form button{
+      width: 180px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: #fff;
+      background-color: hsl(224, 93%, 58%);
+      padding: 14px;
+      border: none;
+    }
+    .content-3 form button:hover{
+      background-color: hsl(224, 93%, 70%);
+    }
+
+
+    /*footer*/
+    .footer{
+      color: #fff;
+      background-color: hsl(243, 87%, 12%);
+      padding: 60px 100px;
+    }
+    .footer .logo{
+      margin-bottom: 20px;
+    }
+    .footer .main{
+      width: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .footer .main .contact .phone, .email{
+      display: flex;
+      align-items: center;
+    }
+    .footer .main .contact img{
+      margin-right: 15px;
+    }
+    .footer .main .menu-1, .menu-2{
+      list-style: none;
+    }
+    .footer .main .menu-1 li, .menu-2 li{
+      margin-bottom: 15px;
+    }
+    .footer .main .menu-1 li a, .menu-2 li a{
+      text-decoration: none;
+      color: #fff;
+    }
+    .footer .main .menu-1 li a:hover, .menu-2 li a:hover{
+      color: hsl(238, 22%, 44%);
+    }
+    .footer .main .social span a{
+      color: #fff;
+    }
+    .footer .main .social span{
+      margin-right: 15px;
+    }
+    .footer .main .social span:hover i{
+      color: hsl(238, 22%, 44%);
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 375px) {
+      /*navbar*/
+      .navbar{
+        padding: 20px;
+      }
+      .navbar img{
+        width: 100px;
+      }
+      .navbar .menu li{
+        font-size: 14px;
+        display: inline-block;
+        padding: 5px;
+      }
+
+      /*content-1*/
+      .content-1{
+        padding: 60px 0;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .content-1 .left{
+        order: 2;
+        width: 350px;
+      }
+      .content-1 .left .title{
+        font-size: 26px;
+        line-height: 38px;
+      }
+      .content-1 .left .desc{
+        width: 350px;
+      }
+      .content-1 .left form{
+        display: flex;
+        flex-direction: column;
+      }
+      .content-1 .left form input{
+        order: 1;
+        width: auto;
+        margin: 0 0 10px 0;
+      }
+      .content-1 .left form .alert{
+        order: 2;
+        color: orangered;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+        display: none;
+      }
+      .content-1 .left form button{
+        order: 3;
+      }
+      .content-1 .illustration-1{
+        order: 1;
+        width: 350px;
+      }
+
+      /*content-2*/
+      .content-2 img.bg-curve-desktop{
+        display: none;
+      }
+      .content-2 .bg-curve-mobile{
+        display: block;
+        width: 375px;
+        height: 53px;
+      }
+      .content-2 .main{
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0; 
+      }
+      .content-2 .main .left{
+        order: 2;
+        width: 350px;
+      }
+      .content-2 .main .left .title{
+        text-align: center;
+        margin: 20px 0;
+        font-size: 26px;
+      }
+      .content-2 .main .left .desc-1, .desc-2{
+        width: 350px;
+      }
+      .content-2 .main .left a{
+        margin: 0 auto;
+      }
+      .content-2 .main .left .quotes{
+        font-size: 13px;
+        line-height: 25px;
+        padding: 30px 20px;
+        margin: 50px auto;
+        width: 300px;
+      }
+      .content-2 .main .left .quotes .user .name{
+        font-size: 13px;
+      }
+      .content-2 .main .left .quotes .user .title{
+        font-size: 13px;
+      }
+      .content-2 .main .illustration-2{
+        order: 1;
+        width: 350px;
+      }
+
+      /*content-3*/
+      .content-3{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 0;
+      }
+      .content-3 .left{
+        width: auto;
+      }
+      .content-3 .left .title{
+        margin: 20px 0;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+        text-align: center;
+      }
+      .content-3 .left .desc{
+        width: 330px;
+        text-align: center;
+      }
+      .content-3 form{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+      .content-3 form input{
+        margin: 0 0 10px 0;
+      }
+      .content-3 form .alert{
+        font-size: 14px;
+        margin: 0 0 10px 0;
+        display: none;
+      }
+      .content-3 form button{
+        width: auto;
+      }
+
+      /*footer*/
+      .footer{
+        padding: 50px;
+      }
+      .footer .main{
+        width: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .footer .main ul{
+        padding: 0;
+      }
+      .footer .main .social{
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="images/logo.svg" alt="logo">
+    <ul class="menu">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Sign In</a></li>
+    </ul>
+  </div>
+
+  <div class="content-1">
+    <div class="left">
+      <p class="title">All your files in one secure location, accessible anywhere.</p>
+      <p class="desc">Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
+      <form action="#" id="my-form-1">
+        <input type="text" id="email-1" placeholder="Enter your email...">
+        <button type="submit" id="submit-1">Get Started</button>
+        <p class="alert alert-1">Please check your email</p>
+      </form>
+    </div>
+    <img class="illustration-1" src="images/illustration-1.svg" alt="illustration-1">
+  </div>
+  
+  <div class="content-2">
+    <img class="bg-curve-desktop" src="images/bg-curve-desktop.svg" alt="bg-curve-desktop">
+    <img class="bg-curve-mobile" src="images/bg-curve-mobile.svg" alt="bg-curve-mobile">
+    <div class="main">
+      <div class="left">
+        <p class="title">Stay productive, wherever you are</p>
+        <p class="desc-1">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+        <p class="desc-2">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+        <a href="#">
+          See how Fylo works
+          <img src="images/icon-arrow.svg" alt="arrow">
+        </a>
+        <div class="quotes">
+          <img src="images/icon-quotes.svg" alt="quotes">
+          <p class="testimoni">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+          <div class="id">
+            <img class="avatar" src="images/avatar-testimonial.jpg" alt="avatar-testimonial">
+            <div class="user">
+              <p class="name">Kyle Burton</p>
+              <p class="title">Founder & CEO, Huddle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="illustration-2" src="images/illustration-2.svg" alt="illustration-2">
+    </div>
+  </div>
+  
+  <div class="content-3">
+    <div class="left">
+      <p class="title">Get early access today</p>
+      <p class="desc">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+    </div>
+    <form action="#" id="my-form-2">
+      <input type="text" id="email-2" placeholder="email@example.com">
+      <p class="alert alert-2">Please check your email</p>
+      <button type="submit" id="submit-2">Get Started For Free</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    <img class="logo" src="images/logo-footer.svg" alt="logo">
+    <div class="main">
+      <div class="contact">
+        <div class="phone">
+          <img src="images/icon-phone.svg" alt="icon-phone">
+          <p class="desc">Phone: +1-543-123-4567</p>
+        </div>
+        <div class="email">
+          <img src="images/icon-email.svg" alt="icon-email">
+          <p class="desc">example@fylo.com</p>
+        </div>
+      </div>
+      <ul class="menu-1">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <ul class="menu-2">
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+      <div class="social">
+        <span><a href="#"><i class="fab fa-facebook fa-2x"></i></a></span>
+        <span><a href="#"><i class="fab fa-instagram fa-2x"></i></a></span>
+        <span><a href="#"><i class="fab fa-twitter fa-2x"></i></a></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Abdullah Al-Karim</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
